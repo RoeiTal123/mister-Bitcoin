@@ -14,6 +14,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { ContacteditComponent } from './pages/contactedit/contactedit.component';
 import { ContactdetailsComponent } from './pages/contactdetails/contactdetails.component';
 import { HeaderComponent } from './cmps/header/header.component';
+import { ProfilepageComponent } from './pages/profilepage/profilepage.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { HeaderComponent } from './cmps/header/header.component';
     ContacteditComponent,
     ContactdetailsComponent,
     HeaderComponent,
+    ProfilepageComponent,
   ],
   imports: [
     BrowserModule,

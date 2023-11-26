@@ -1,6 +1,9 @@
+import { User } from "../models/user.model"
+
 export const storageService = {
     post,
     get,
+    getUser,
     put,
     remove,
     query,
@@ -15,11 +18,18 @@ function query<T>(entityType: string, delay = 200): Promise<T[]> {
     return new Promise(resolve => setTimeout(() => resolve(entities), delay))
 }
 
-async function get<T extends EntityId>(entityType: string, entityId: string): Promise<T> {
+async function get<T extends EntityId>(entityType: string, entityId: string ): Promise<T> {
     const entities = await query<T>(entityType)
     const entity = entities.find(entity_1 => entity_1._id === entityId)
     if (!entity) throw new Error(`Get failed, cannot find entity with id: ${entityId} in: ${entityType}`)
     return entity
+}
+
+async function getUser<T extends EntityId>(entityType: string): Promise<T> {
+    const entity = await query<T>(entityType)
+    // const entity = entities.find(entity_1 => entity_1._id === entityId)
+    if (!entity) throw new Error(`Get failed, cannot find entity in: ${entityType}`)
+    return entity[0]
 }
 
 async function post<T extends EntityId>(entityType: string, newEntity: T): Promise<T> {

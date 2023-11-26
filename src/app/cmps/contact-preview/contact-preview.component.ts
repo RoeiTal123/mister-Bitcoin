@@ -29,7 +29,6 @@ export class ContactPreviewComponent implements OnInit{
     } else {
       this.isCorrectPath=true
     }
-    console.log(this.isCorrectPath)
   }
 
   onRemoveContact() {

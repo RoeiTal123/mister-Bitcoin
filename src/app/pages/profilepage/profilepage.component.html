@@ -1,0 +1,9 @@
+<section *ngIf="user$|async as user">
+    <img src="https://res.cloudinary.com/digrqdbso/image/upload/v1700657497/wo_lodbcw.png">
+    <div>
+        <p>Name: {{user.name}}</p>
+        <p>coins: {{user.coins}}</p>
+        <p>moves: {{user.moves}}</p>
+    </div>
+    
+</section>

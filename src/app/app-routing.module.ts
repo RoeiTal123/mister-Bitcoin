@@ -5,19 +5,16 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { ContactdetailsComponent } from './pages/contactdetails/contactdetails.component';
 import { contactResolverResolver } from './resolvers/contact-resolver.resolver';
 import { ContacteditComponent } from './pages/contactedit/contactedit.component';
+import { ProfilepageComponent } from './pages/profilepage/profilepage.component';
+import { userResolver } from './resolvers/user-resolver.resolver';
 
 const routes: Routes = [
+  {path: 'profile/:id',component: ProfilepageComponent},
+  {path: 'profile',component: ProfilepageComponent, resolve: {user : userResolver}},
   {path: 'details/:id', component:ContactdetailsComponent, resolve: { contact : contactResolverResolver } },
-
-  {path: 'contact', component:ContactComponent
-  // , children: [
-  //   // { path: ':id', component: ContactdetailsComponent, resolve: { contact: contactResolverResolver } },
-  //   { path: 'edit/:id', component: ContacteditComponent, resolve: { contact : contactResolverResolver } },
-  //   { path: 'edit', component: ContacteditComponent }
-  // ]
-  },
+  {path: 'contact', component:ContactComponent},
   { path: 'edit/:id', component: ContacteditComponent, resolve: { contact : contactResolverResolver } },
-    { path: 'edit', component: ContacteditComponent },
+  { path: 'edit', component: ContacteditComponent },
   {path: '', component:HomepageComponent}
 ];
 
