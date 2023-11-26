@@ -9,11 +9,15 @@ import { ContacteditComponent } from './pages/contactedit/contactedit.component'
 const routes: Routes = [
   {path: 'details/:id', component:ContactdetailsComponent, resolve: { contact : contactResolverResolver } },
 
-  {path: 'contact', component:ContactComponent, children: [
-    // { path: ':id', component: ContactdetailsComponent, resolve: { contact: contactResolverResolver } },
-    { path: 'edit/:id', component: ContacteditComponent, resolve: { contact : contactResolverResolver } },
-    { path: 'edit', component: ContacteditComponent }
-  ]},
+  {path: 'contact', component:ContactComponent
+  // , children: [
+  //   // { path: ':id', component: ContactdetailsComponent, resolve: { contact: contactResolverResolver } },
+  //   { path: 'edit/:id', component: ContacteditComponent, resolve: { contact : contactResolverResolver } },
+  //   { path: 'edit', component: ContacteditComponent }
+  // ]
+  },
+  { path: 'edit/:id', component: ContacteditComponent, resolve: { contact : contactResolverResolver } },
+    { path: 'edit', component: ContacteditComponent },
   {path: '', component:HomepageComponent}
 ];
 

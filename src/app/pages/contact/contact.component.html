@@ -1,6 +1,6 @@
 <section class="contact">
     <section>
-        <a routerLink="/contact/edit">Add Contact</a>
+        <a routerLink="/edit">Add Contact</a>
         <app-contact-list [contacts]="contacts$ | async"  (remove)=" onRemoveContact($event)"></app-contact-list>
     </section>
     <router-outlet></router-outlet>

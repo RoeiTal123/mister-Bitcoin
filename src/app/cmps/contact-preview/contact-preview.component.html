@@ -5,7 +5,7 @@
     </a>
         <div class="actions">
             <button (click)="onRemoveContact()" class="remove-btn">X</button>
-            <a [routerLink]="['/contact/edit', contact._id]" (click)="onRefreshPath()">Edit</a>
+            <a [routerLink]="['/edit', contact._id]" (click)="onRefreshPath()">Edit</a>
         </div>
     <router-outlet></router-outlet>
 </section>
