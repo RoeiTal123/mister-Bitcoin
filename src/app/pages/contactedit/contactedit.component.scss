@@ -1,0 +1,56 @@
+.contact-edit{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: fit-content;
+    margin: 24px 0;
+    .actions{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        a{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 32px;
+            height: 32px;
+            border: 2px solid rgb(144, 176, 224);
+            border-radius: 50%;
+            background-color: #82b2e9;
+            color: #ffffff;
+            text-decoration: none;
+        }
+    }
+    img{
+        height: 128px;
+        width: 128px;
+        margin: 24px 0;
+    }
+    .edit-form{
+        display: flex;
+        flex-direction: column;
+        .edit-input{
+            display: flex;
+            justify-content: space-between;
+            gap: 32px;
+            margin-block-end: 16px;
+            label{
+                width: 50px;
+            }
+            input{
+                flex-grow: 1;
+                border: 1px solid #ebe9e8;
+                border-radius: 4px;
+            }
+        }
+        .save-btn{
+            display: flex;
+            justify-content: end;
+            button{
+                background-color: white;
+                border: 1px solid #ebe9e8;
+                border-radius: 4px;
+            }
+        }
+    }
+}

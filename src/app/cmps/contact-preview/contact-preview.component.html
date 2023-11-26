@@ -1,0 +1,11 @@
+<section class="contact-preview" *ngIf="isCorrectPath">
+    <a [routerLink]="['/details', contact._id]" class="data">
+        <img src="https://res.cloudinary.com/digrqdbso/image/upload/v1700657497/wo_lodbcw.png">    
+        <span>{{contact.name}}</span>
+    </a>
+        <div class="actions">
+            <button (click)="onRemoveContact()" class="remove-btn">X</button>
+            <a [routerLink]="['/contact/edit', contact._id]" (click)="onRefreshPath()">Edit</a>
+        </div>
+    <router-outlet></router-outlet>
+</section>

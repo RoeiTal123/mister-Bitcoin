@@ -1,0 +1,3 @@
+<section>
+    <app-contact-preview *ngFor="let contact of contacts" [contact]="contact" (change)="change.emit($event)" (remove)="remove.emit($event)"></app-contact-preview>
+</section>

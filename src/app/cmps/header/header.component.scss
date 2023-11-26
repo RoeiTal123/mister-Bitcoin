@@ -1,0 +1,24 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: fit-content;
+    padding: 12px;
+    h1.logo {
+        flex-grow: 1;
+        margin: 0;
+    }
+    nav {
+        a {
+            &:not(:last-child) {
+                margin-right: 10px;
+            }
+
+            &.active {
+                color: darkred;
+                font-weight: bold;
+            }
+        }
+    }
+}

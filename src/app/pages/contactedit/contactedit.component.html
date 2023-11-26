@@ -1,0 +1,27 @@
+<section class="contact-edit">
+    <div class="actions">
+        <a routerLink="/contact" routerLinkActive="active"><</a>
+        <button>remove</button>
+    </div>
+    <img src="https://res.cloudinary.com/digrqdbso/image/upload/v1700657497/wo_lodbcw.png">
+    <form (ngSubmit)="onSaveContact()" class="edit-form">
+        <div class="edit-input">
+            <label for="name">Name: </label>
+            <input [(ngModel)]="contact.name" type="text" name="name"/>
+        </div>
+
+        <div class="edit-input">
+            <label for="phone">Phone: </label>
+            <input [(ngModel)]="contact.phone" type="tel" name="phone"/> 
+        </div>
+         
+        <div class="edit-input">
+            <label for="email">Email: </label>
+            <input [(ngModel)]="contact.email" type="email" name="email"/>
+        </div>
+        <div class="save-btn">
+            <button (click)="onSaveContact()">save</button>
+        </div>
+    </form>
+</section>
+
