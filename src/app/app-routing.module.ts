@@ -9,8 +9,8 @@ import { ProfilepageComponent } from './pages/profilepage/profilepage.component'
 import { userResolver } from './resolvers/user-resolver.resolver';
 
 const routes: Routes = [
-  {path: 'profile/:id',component: ProfilepageComponent},
-  {path: 'profile',component: ProfilepageComponent, resolve: {user : userResolver}},
+  {path: 'profile/:id',component: ProfilepageComponent, resolve: {user : userResolver}},
+  {path: 'profile',component: ProfilepageComponent},
   {path: 'details/:id', component:ContactdetailsComponent, resolve: { contact : contactResolverResolver } },
   {path: 'contact', component:ContactComponent},
   { path: 'edit/:id', component: ContacteditComponent, resolve: { contact : contactResolverResolver } },

@@ -1,9 +1,34 @@
-<section *ngIf="user$|async as user">
-    <img src="https://res.cloudinary.com/digrqdbso/image/upload/v1700657497/wo_lodbcw.png">
-    <div>
-        <p>Name: {{user.name}}</p>
-        <p>coins: {{user.coins}}</p>
-        <p>moves: {{user.moves}}</p>
-    </div>
-    
+<section *ngIf="user$|async as user" class="profile-page">
+    <section>
+        <img src="https://res.cloudinary.com/digrqdbso/image/upload/v1701019091/angular/wo_kyuai7.png">
+        <div>
+            <p>Name: {{user.name}}</p>
+            <p>Phone: {{user.phone}}</p>
+            <p>Email: {{user.email}}</p>
+        </div>
+    </section>
+    <section class="transfer">
+        <span>Transfer Coins to {{user.name}}</span>
+        <div class="coins-transfer">
+            Amount: 
+            <input #elTransfer type="number" name="" min=1 max=100 id="coins"/>
+            <button (click)="onTransfer()">Transfer</button>
+        </div>
+        
+    </section>
+    <section>
+        <p>moves: {{loggedInUser!.moves}}</p>
+    </section>
+</section>
+<section *ngIf="correctPath" class="profile-page">
+    <section>
+        <img src="https://res.cloudinary.com/digrqdbso/image/upload/v1701019091/angular/wo_kyuai7.png">
+        <div>
+            <p>Name: {{loggedInUser!.name}}</p>
+            <p>coins: {{loggedInUser!.coins}}</p>
+        </div>
+    </section>
+    <section>
+        <p>moves: {{loggedInUser!.moves[0] | json}}</p>
+    </section>
 </section>

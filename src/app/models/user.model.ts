@@ -1,6 +1,6 @@
 export interface User {
     name: string
     coins: number
-    moves: any
+    moves: Object[]
     _id: string
 }

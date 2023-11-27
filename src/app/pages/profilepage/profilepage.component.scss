@@ -1,0 +1,25 @@
+.profile-page{
+    display: flex;
+    flex-direction: column;
+    padding: 0 24px;
+    height: fit-content;
+    overflow: scroll;
+    img{
+        height: 48px;
+        width: 48px;
+    }
+    .transfer{
+        background-color: #7fc8ff;
+        border-radius: 3px;
+        padding: 24px;
+        height: fit-content;
+        .coins-transfer{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            input{
+                margin-block-start: 24px;
+            }
+        }
+    }
+}
