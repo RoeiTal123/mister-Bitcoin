@@ -28,7 +28,19 @@
             <p>coins: {{loggedInUser!.coins}}</p>
         </div>
     </section>
-    <section>
-        <p>moves: {{loggedInUser!.moves[0] | json}}</p>
+    <section class="moves">
+        <span>moves: </span>
+        <section *ngFor="let move of loggedInUser!.moves" class="move">
+            <!-- <p>{{move  | json}}</p> -->
+            <div class="properties">
+                <span>Amount:</span>
+                <span>At:</span>
+            </div>
+            <div class="values">
+                <span *ngFor="let key of getMoveKeys(move)">
+                    {{key}}
+                </span>
+            </div>
+        </section>
     </section>
 </section>

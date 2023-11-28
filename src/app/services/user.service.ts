@@ -51,7 +51,7 @@ export class UserService {
       transferredAt: Date.now(),
     };
     this.user.moves.push(transaction);
-    console.log(transaction);
+    // console.log(this.user.moves);
   }
 
   private _addUser(userToInsert: any) {

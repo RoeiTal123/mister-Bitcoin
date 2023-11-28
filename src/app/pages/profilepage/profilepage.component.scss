@@ -22,4 +22,27 @@
             }
         }
     }
+    .moves{
+        display: flex;
+        flex-direction: column;
+        background-color: #f1f1f1;
+        padding: 24px;
+        height: fit-content;
+        .move{
+            display: flex;
+            justify-content: space-between;
+            border-block-start: 1px solid #dfdfdf;
+            border-block-end: 1px solid #dfdfdf;
+            padding: 12px 0;
+            height: fit-content;
+            .properties{
+                display: flex;
+                flex-direction: column;
+            }
+            .values{
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
 }

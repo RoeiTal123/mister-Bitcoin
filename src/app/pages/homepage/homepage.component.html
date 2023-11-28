@@ -1,7 +1,19 @@
 <section class="homepage">
     
-    <p>Hello {{username.name}}!</p>
-    <p>Coins: {{username.coins}}</p>
+    <p>Hello {{user.name}}!</p>
+    <p>Coins: {{user.coins}}</p>
     <p>BTC: {{btcRate$ | async}}</p>
 
+    <section *ngFor="let move of moves" class="move">
+        <!-- <p>{{move  | json}}</p> -->
+        <div class="properties">
+            <span>Amount:</span>
+            <span>At:</span>
+        </div>
+        <div class="values">
+            <span *ngFor="let key of getMoveKeys(move)">
+                {{key}}
+            </span>
+        </div>
+    </section>
 </section>

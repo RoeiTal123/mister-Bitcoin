@@ -23,6 +23,8 @@ export class ProfilepageComponent implements OnInit, OnDestroy{
 
   @ViewChild('elTransfer') elTransfer!: ElementRef<HTMLInputElement>
 
+  currentMoves : Object[] = []
+
   async ngOnInit(): Promise<void> {
     if (this.router.url!=='/profile'){
       this.correctPath=false
@@ -31,17 +33,32 @@ export class ProfilepageComponent implements OnInit, OnDestroy{
     }
     this.loggedInUser = this.userService.loggedInUser
     this.user$ = this.route.data.pipe(map(data => data['user']))
+    // this.currentMoves=this.loggedInUser.moves.stringify
+    this.loggedInUser.moves.map((move)=>this.currentMoves.push(move))
     // console.log(this.user$)
   }
 
   onTransfer(){
     const transferValue=this.elTransfer.nativeElement.value
-    if(transferValue===''||parseInt(transferValue)===0||isNaN(parseInt(transferValue))){
+    if(transferValue===''||parseInt(transferValue)===0||isNaN(parseInt(transferValue))||(parseInt(transferValue)>=this.loggedInUser!.coins)){
       console.log('please enter a valid value')
     } else {
       this.userService.makeTransaction(parseInt(transferValue),'bready')
     }
     console.log(transferValue)
+  }
+
+  getMoveKeys(move: any): number[] {
+    // Use Object.keys() to get the keys of the move object
+    var values : any[]=[]
+    values=[Object.values(move)[1],Object.values(move)[3]]
+    if (values[0]===1) {
+      values[0] += ' coin'
+    }  else {
+      values[0] += ' coins'
+    }
+    values[1]=new Date(values[1])
+    return values;
   }
 
   ngOnDestroy(): void {
